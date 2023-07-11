@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "554763742993",
+    "project_id": "smartpillbox-685cb",
+    "storage_bucket": "smartpillbox-685cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554763742993:android:8609bcd031c94e3516a6b0",
+        "android_client_info": {
+          "package_name": "com.example.smart_pillbox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "554763742993-84fghm0gbtqtgfk5isj7s0d6n6vkg9nb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCs9OfKnO8J8woZ0XkUWwVb33dBt6fosWY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "554763742993-84fghm0gbtqtgfk5isj7s0d6n6vkg9nb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

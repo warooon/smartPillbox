@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>554763742993-2p7al6a4d4s5l38r95lei85785lou935.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.554763742993-2p7al6a4d4s5l38r95lei85785lou935</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAhu6P1WUDJapjzwOXjT3Nqk5dXvh2YcCg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>554763742993</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.smartPillbox</string>
+	<key>PROJECT_ID</key>
+	<string>smartpillbox-685cb</string>
+	<key>STORAGE_BUCKET</key>
+	<string>smartpillbox-685cb.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:554763742993:ios:aaa9431ccbed634316a6b0</string>
+</dict>
+</plist>
