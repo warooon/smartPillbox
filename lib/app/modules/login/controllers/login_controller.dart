@@ -10,9 +10,10 @@ class LoginController extends GetxController {
   RxBool obscureText = false.obs;
   TextEditingController emailc = TextEditingController();
   TextEditingController passwordc = TextEditingController();
+  RxBool isGoogleSignInLoading = false.obs;
 
   FirebaseAuth auth = FirebaseAuth.instance;
-  GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
+  final GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
 
   Future<void> login() async {
     if (emailc.text.isNotEmpty && passwordc.text.isNotEmpty) {
@@ -27,7 +28,7 @@ class LoginController extends GetxController {
             Get.offAllNamed(Routes.HOME);
           } else {
             Get.defaultDialog(
-              content: Text("Send verification Email"),
+              content: const Text("Send verification Email"),
               title: "Email Not Yet Verified!",
               textConfirm: "Send",
               textCancel: "Back",
@@ -67,7 +68,9 @@ class LoginController extends GetxController {
   }
 
   Future<void> signInWithGoogle() async {
+    
     try {
+      isGoogleSignInLoading.value = true;
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
       if (googleUser != null) {
         final GoogleSignInAuthentication gAuth =
@@ -78,37 +81,18 @@ class LoginController extends GetxController {
             await FirebaseAuth.instance.signInWithCredential(credential);
         if (userCredential.user != null) {
           if (userCredential.user!.emailVerified) {
-            isLoading.value = false;
+            isGoogleSignInLoading.value = false;
             Get.offAllNamed(Routes.HOME);
           } else {
-            Get.defaultDialog(
-              content: Text("Send verification Email"),
-              title: "Email Not Yet Verified!",
-              textConfirm: "Send",
-              textCancel: "Back",
-              onCancel: () => Get.back(),
-              onConfirm: () async {
-                try {
-                  await userCredential.user!.sendEmailVerification();
-                  Get.back();
-                  CustomToast.successToast(
-                      "Success", "We've sent a verification email!");
-                  isLoading.value = false;
-                } catch (e) {
-                  CustomToast.errorToast("Error",
-                      "Cant send verification email. Error because : ${e.toString()}");
-                }
-              },
-              confirmTextColor: Colors.white,
-              cancelTextColor: Colors.black,
-              buttonColor: Colors.black,
-            );
+            // ignore: avoid_print
+            print("BreakPoint");
           }
         }
-        isLoading.value = false;
+        isGoogleSignInLoading.value = false;
       }
     } on FirebaseAuthException catch (e) {
       CustomToast.errorToast("Error", "Error because : ${e.toString()}");
+      isGoogleSignInLoading.value = false;
     }
   }
 }

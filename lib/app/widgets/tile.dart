@@ -1,5 +1,6 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class tile extends StatelessWidget {
   final String imagePath;
@@ -11,9 +12,9 @@ class tile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Container(
-        child: Image.asset(imagePath),
+      child: SizedBox(
         height: 50,
+        child: Image.asset(imagePath),
       ),
     );
   }

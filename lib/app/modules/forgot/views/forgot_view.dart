@@ -12,7 +12,7 @@ class ForgotView extends GetView<ForgotController> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           color: Colors.black,
           onPressed: () => Get.back(),
         ),
@@ -24,7 +24,7 @@ class ForgotView extends GetView<ForgotController> {
           physics: const NeverScrollableScrollPhysics(),
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               SvgPicture.asset('assets/icons/password.svg', height: 175),
@@ -33,18 +33,18 @@ class ForgotView extends GetView<ForgotController> {
                 alignment: Alignment.center,
                 child: Text("RESET PASSWORD",
                     style: GoogleFonts.lato(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 25,
                     ))),
               ),
               Container(
-                margin: EdgeInsets.only(top: 40),
+                margin: const EdgeInsets.only(top: 40),
                 width: MediaQuery.of(context).size.width * 0.90,
                 alignment: Alignment.center,
                 child: Text("Password reset link will be sent to your Email!",
                     style: GoogleFonts.lato(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 14,
                     ))),
@@ -66,14 +66,14 @@ class ForgotView extends GetView<ForgotController> {
                     border: InputBorder.none,
                     label: Text("EMAIL ID",
                         style: GoogleFonts.lato(
-                            textStyle: TextStyle(fontStyle: FontStyle.italic))),
+                            textStyle: const TextStyle(fontStyle: FontStyle.italic))),
                     floatingLabelBehavior: FloatingLabelBehavior.always,
-                    labelStyle: TextStyle(
+                    labelStyle: const TextStyle(
                       color: Colors.grey,
                     ),
                     hintText: "example@domain.com",
                     hintStyle: GoogleFonts.lato(
-                      textStyle: TextStyle(
+                      textStyle: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                         color: Colors.grey,
@@ -82,7 +82,7 @@ class ForgotView extends GetView<ForgotController> {
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 width: 100,
                 child: Obx(
                   () => ElevatedButton(
@@ -104,7 +104,7 @@ class ForgotView extends GetView<ForgotController> {
                             ? 'Send Mail'
                             : 'Sending...',
                         style: GoogleFonts.lato(
-                          textStyle: TextStyle(
+                          textStyle: const TextStyle(
                             color: Colors.white,
                             fontSize: 16,
                             fontWeight: FontWeight.bold,

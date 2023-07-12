@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'app/routes/app_pages.dart';
 import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -29,7 +30,7 @@ void main() async {
           getPages: AppPages.routes,
           theme: ThemeData(
             scaffoldBackgroundColor: Colors.white,
-            fontFamily: 'inter',
+            primaryColor: Colors.black,
           ),
         );
       }));

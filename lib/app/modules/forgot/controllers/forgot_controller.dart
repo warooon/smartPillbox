@@ -15,7 +15,7 @@ class ForgotController extends GetxController {
         auth.sendPasswordResetEmail(email: emailC.text);
         Get.back();
         Get.snackbar(
-          duration: Duration(seconds: 5),
+          duration: const Duration(seconds: 5),
           "Email Sent!",
           "Check Email for password reset link!",
           colorText: Colors.white,
@@ -24,7 +24,7 @@ class ForgotController extends GetxController {
         );
       } catch (e) {
         Get.snackbar(
-          duration: Duration(seconds: 5),
+          duration: const Duration(seconds: 5),
           "Error!",
           "Unable to sent reset link: ${e.toString()}",
           colorText: Colors.white,
@@ -36,7 +36,7 @@ class ForgotController extends GetxController {
       }
     } else {
       Get.snackbar(
-        duration: Duration(seconds: 5),
+        duration: const Duration(seconds: 5),
         "Error!",
         "Enter Email!",
         colorText: Colors.white,
