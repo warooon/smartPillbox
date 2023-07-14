@@ -12,96 +12,98 @@ class HomeView extends GetView<HomeController> {
 
   void _openModalBottomSheet(BuildContext context) {
     showModalBottomSheet(
-      // isScrollControlled: true,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(25),
       ),
       showDragHandle: true,
       context: context,
       constraints: const BoxConstraints(maxHeight: 250),
-
       builder: (BuildContext context) {
         return SizedBox(
           width: MediaQuery.of(context).size.width,
-          child: Container(
-            padding: const EdgeInsets.only(top: 15),
-            child: Column(
-              children: [
-                TextButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    overlayColor:
-                        MaterialStateProperty.all<Color>(Colors.transparent),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "View Schedules",
-                        style: GoogleFonts.lato(
-                          textStyle: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
+          child: Column(
+            children: [
+              const Text(
+                "More Options",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const Divider(thickness: 1, color: Colors.grey),
+              TextButton(
+                onPressed: () {},
+                style: ButtonStyle(
+                  overlayColor:
+                      MaterialStateProperty.all<Color>(Colors.transparent),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "View Schedules",
+                      style: GoogleFonts.lato(
+                        textStyle: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(width: 10),
-                      const Icon(
-                        Icons.calendar_month_outlined,
-                        color: Colors.black,
-                      )
-                    ],
-                  ),
+                    ),
+                    const SizedBox(width: 10),
+                    const Icon(
+                      Icons.calendar_month_outlined,
+                      color: Colors.black,
+                    )
+                  ],
                 ),
-                TextButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    overlayColor:
-                        MaterialStateProperty.all<Color>(Colors.transparent),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Medication Quality",
-                        style: GoogleFonts.lato(
-                          textStyle: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
+              ),
+              TextButton(
+                onPressed: () {},
+                style: ButtonStyle(
+                  overlayColor:
+                      MaterialStateProperty.all<Color>(Colors.transparent),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Medication Quality",
+                      style: GoogleFonts.lato(
+                        textStyle: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(width: 10),
-                      const Icon(
-                        Icons.medication,
-                        color: Colors.black,
-                      )
-                    ],
-                  ),
+                    ),
+                    const SizedBox(width: 10),
+                    const Icon(
+                      Icons.medication,
+                      color: Colors.black,
+                    )
+                  ],
                 ),
-                TextButton(
-                  onPressed: () {
-                    _signOutController.signOut();
-                  },
-                  style: ButtonStyle(
-                    overlayColor:
-                        MaterialStateProperty.all<Color>(Colors.transparent),
-                  ),
-                  child: Text(
-                    "Sign out",
-                    style: GoogleFonts.lato(
-                      textStyle: const TextStyle(
-                        color: Colors.red,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
+              ),
+              TextButton(
+                onPressed: () {
+                  _signOutController.signOut();
+                },
+                style: ButtonStyle(
+                  overlayColor:
+                      MaterialStateProperty.all<Color>(Colors.transparent),
+                ),
+                child: Text(
+                  "Sign out",
+                  style: GoogleFonts.lato(
+                    textStyle: const TextStyle(
+                      color: Colors.red,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         );
       },
